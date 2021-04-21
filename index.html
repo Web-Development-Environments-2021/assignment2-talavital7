@@ -51,28 +51,28 @@
 		<!-- Sign Up Screen Div -->
 		<div id="signUp" class="fixed" style="display: none;">
 			<br><br>
-			<h1>Registration:</h1>
+			<h1>Sign:</h1>
 			Please enter your details below
 			<br><br>
-			<form id="registration" method="post" action="">
+			<form id="regForm" method="post" action="">
 			  <div>
 				<label for="username">User-Name:</label>
-				<input type="text" id="username" name="username" placeholder="charecters only"></input>
+				<input type="text" id="usernameSignUp" name="username" placeholder="charecters only"></input>
 			  </div><br>
 			  <div>
 				<label for="password">Password:</label>
-				<input type="password" id="password" name="password" placeholder="char and digits- at least 6"></input>
+				<input type="password" id="passwordSignUp" name="password" placeholder="char and digits- at least 6"></input>
 			  </div><br>
 			  <div>
 				<label for="fullname">Full Name:</label>
 				<input type="text" id="fullname" name="fullname"  placeholder="charecters only"/>
 			  </div>
 			  <div><br>
-				<label for="email">Email:</label>
+				<label for="email">E-mail:</label>
 				<input type="text" id="email" name="email" placeholder="email address"></input>
 			  </div>
 			  <div><br>
-				<label for="date" >Birthday:</label>&nbsp&nbsp
+				<label for="date" >Birth Date:</label>&nbsp&nbsp
 
 				<select id="day">
 					<option value="1">1</option>
@@ -202,10 +202,30 @@
 				</select>
 			  </div><br>			  
 			</form>
-			<div>
+			<!-- <div>
 				<input id="submit" onclick="subClick()" type="submit" value="SignUp!" class="submit"/>&nbsp
 				<button onclick="clearReg()">Clear</button>
-			</div>
+			</div> -->
+		</div>
+
+		<!-- Login Screen Div -->
+			<div id="login" class="fixed" style="display: none;">
+			<br><br>
+			<h1>Login</h1>
+			Enter your user login details below
+			<br><br>
+			<div>
+				<label for="username" >UserName:</label>
+				<input type="text" id="username" name="username" placeholder="Enter username"></input>
+			</div><br>
+			<div>
+				<label for="password">Password:&nbsp&nbsp</label>
+				<input type="password" id="password" name="password" placeholder="Enter password"></input>
+			</div><br>
+			<!-- <button onclick="checkDetails()" >Login</button>&nbsp&nbsp
+			<button onclick="document.getElementById('Password').value = '';document.getElementById('userName').value = ''">Clear</button> -->
+
+			<br><br><br>
 		</div>
 
 		<!-- Game Screen Div -->
@@ -228,7 +248,7 @@
 			<source src="SuperMarioBros.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
 		</audio>
-		
+
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog">
