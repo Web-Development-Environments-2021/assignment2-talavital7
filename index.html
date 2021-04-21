@@ -4,13 +4,24 @@
 		<script src="./jquery-3.4.1.slim.min.js"></script>
 		<script type="text/javascript" src="./app.js"></script>
 		<link rel="stylesheet"  href="style.css" />
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	</head>
 
 	<body>
 		<header>
 			<img src="images/pac-logo-3.png" width="500" height="150">
 		</header>
-
+		<menu>
+			<ul>
+				<li><a onClick="" href="#Welcome">Welcome</a></li>
+				<li><a onClick="" href="#Registration">Registration</a></li>
+				<li><a onClick="" href="#Login">Login</a></li>
+				<li><a  data-toggle="modal" data-target="#myModal" >About</a></li>
+			</ul>
+		</menu>
+		
 		<div id="score">
 			<label for="lblScore">SCORE:</label>
 			<input id="lblScore" type="text" />
@@ -22,5 +33,26 @@
 		<div id="game">
 			<canvas id="canvas" height="600" width="600"></canvas>
 		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+			  <!-- Modal content-->
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal">&times;</button>
+				  <h4 class="modal-title">About:</h4>
+				</div>
+				<div class="modal-body">
+				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			  
+			</div>
+		  </div>
+
 	</body>
 </html>
