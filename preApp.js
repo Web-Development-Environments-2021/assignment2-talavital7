@@ -113,10 +113,23 @@ function Submition(){
     ShowSection('login');
     }
 }
+
+//clear fields
+function clearFields(){
+    document.getElementById('fullname').value = '';
+    document.getElementById('usernameSignUp').value = '';
+    document.getElementById('day').value = '1';
+    document.getElementById('month').value = 'Jan';
+    document.getElementById('passwordSignUp').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('year').value = '2016';
+    $(".error").remove();
+
+}
 function saveUser() 
 {
-    var username=document.getElementById("username");
-    var password=document.getElementById("password");
+    var username=document.getElementById("usernameSignUp");
+    var password=document.getElementById("passwordSignUp");
     sessionStorage.setItem(username.value,password.value);
     
 }   

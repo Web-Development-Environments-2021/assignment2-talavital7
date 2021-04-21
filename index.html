@@ -7,7 +7,7 @@
 		<!-- jQuery Modal -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
 
 		<script src="./jquery-3.4.1.slim.min.js"></script>
 		<script type="text/javascript" src="./app.js"></script>
@@ -51,12 +51,12 @@
 		<!-- Sign Up Screen Div -->
 		<div id="signUp" class="fixed" style="display: none;">
 			<br><br>
-			<h1>Sign:</h1>
+			<h1>Sign Up:</h1>
 			Please enter your details below
 			<br><br>
 			<form id="regForm" method="post" action="">
 			  <div>
-				<label for="username">User-Name:</label>
+				<label for="username">Username:</label>
 				<input type="text" id="usernameSignUp" name="username" placeholder="charecters only"></input>
 			  </div><br>
 			  <div>
@@ -202,10 +202,10 @@
 				</select>
 			  </div><br>			  
 			</form>
-			<!-- <div>
-				<input id="submit" onclick="subClick()" type="submit" value="SignUp!" class="submit"/>&nbsp
-				<button onclick="clearReg()">Clear</button>
-			</div> -->
+			<div>
+				<input id="submit" onclick="Submition()" type="submit" value="SignUp!" class="submit"/>&nbsp
+				<button onclick="clearFields()">Clear</button>
+			</div>
 		</div>
 
 		<!-- Login Screen Div -->
@@ -216,7 +216,7 @@
 			<br><br>
 			<div>
 				<label for="username" >UserName:</label>
-				<input type="text" id="username" name="username" placeholder="Enter username"></input>
+				<input type="text" id="userame" name="username" placeholder="Enter username"></input>
 			</div><br>
 			<div>
 				<label for="password">Password:&nbsp&nbsp</label>

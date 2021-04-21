@@ -5,6 +5,15 @@ body {
     margin: 0px;
 }
 
+.error {
+    color: red;
+    margin-left: 5px;
+}
+
+label.error {
+    display: inline;
+}
+
 div.fixed {
     position: absolute;
     text-align: center;
