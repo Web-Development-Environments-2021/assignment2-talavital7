@@ -12,6 +12,7 @@ $(document).ready(function() {
 	Start();
 });
 
+
 function Start() {
 	board = new Array();
 	score = 0;
@@ -119,7 +120,7 @@ function Draw() {
 			} else if (board[i][j] == 1) {
 				context.beginPath();
 				context.arc(center.x, center.y, 15, 0, 2 * Math.PI); // circle
-				context.fillStyle = "white"; //color
+				context.fillStyle = "black"; //color
 				context.fill();
 			} else if (board[i][j] == 4) {
 				context.beginPath();
@@ -170,3 +171,4 @@ function UpdatePosition() {
 		Draw();
 	}
 }
+
