@@ -8,7 +8,7 @@ function saveKUser()
 } 
 function PageLoaded()
 {
-    ShowSection('welcomeScreen');
+    ShowSection('gameScreen');
 }
 
 //choose section to show.
