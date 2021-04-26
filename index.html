@@ -282,7 +282,10 @@
 				<button onclick="startGameSetup()">Start game</button>
 			</div>
 		</div>
-
+		<img id="wall" src="images/StoneWall.png" style="display: none;">
+		<img id="gift" src="images/gift.png" style="display: none;">
+		<!-- Audio Element -->
+		
 		<!-- Game Screen Div -->
 		<div id="gameScreen" class="fixed" >
 			<div class="left_s">
@@ -294,19 +297,20 @@
 					<label for="lblTime">TIME:</label>
 					<input id="lblTime" type="text" />
 				</div>
+				<div id="lives">
+					<label for="lblLives">LIVES:</label>
+					<input id="lblLives" type="text" />
+				</div>
 			</div>
 			<div id="game" class="center_s">
 				<canvas id="canvas" height="600" width="600"></canvas>
 			</div>
 			<div class="right_s">game setup</div>
 		</div>
-
-		<!-- Audio Element -->
-		<!-- <audio id="gameAudio">
-			<source src="SuperMarioBros.mp3" type="audio/mpeg">
-			Your browser does not support the audio element.
-		</audio> -->
-
+		
+		<audio id="myAudio">
+			<source src="audio/trance_djf.mp3" type="audio/mpeg">
+		</audio>
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" role="dialog" >
 			<!-- Modal content-->
