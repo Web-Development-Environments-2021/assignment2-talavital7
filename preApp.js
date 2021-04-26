@@ -12,6 +12,7 @@ function saveKUser()
 //when page is freshly loaded
 function PageLoaded()
 {
+    sessionStorage.clear()
     ShowSection('welcomeScreen');
 }
 
@@ -27,8 +28,8 @@ function ShowSection(id)
     section3.style.display="none";
     var section4 = document.getElementById('gameScreen');
     section4.style.display="none";
-    // var section4 = document.getElementById('setups');
-    // section4.style.display="none";
+    var section4 = document.getElementById('setup');
+    section4.style.display="none";
     
     //show only one Div
     var selected = document.getElementById(id);
@@ -132,8 +133,7 @@ function clearFields(){
 }
 
 //save a user
-function saveUser() 
-{
+function saveUser(){
     var username=document.getElementById("usernameSignUp");
     var password=document.getElementById("passwordSignUp");
     sessionStorage.setItem(username.value,password.value);
@@ -141,9 +141,19 @@ function saveUser()
 }
 
 //Login button has been clicked in login page.
-function login(){
-    validForm=true;
-    var username = $('#username').val();
-    var password = $('#password').val();
-    $(".error").remove();
+function loginSub(){
+    // var username = $('#username').val();
+    // var password = $('#password').val();
+    // $(".error").remove();
+
+    // var passwordFromDB = sessionStorage.getItem(username.value);
+    // if(password.value != passwordFromDB.value){
+    // alert("Wrong credentials, please try again");
+    // }
+    // else{
+    // alert("check");    
+    // ShowSection('setup');
+    // } 
+
+    ShowSection('setup');
 }

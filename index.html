@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- all pre game screens setups: welcomeScreen, reg, login, about -->
+		<!-- all pre game screens setups: welcomeScreen, signUp, login, about -->
 		<script type="text/javascript" src="./preApp.js"></script>
+
+		<!-- setup -->
+		<script type="text/javascript" src="./setup.js"></script>
 
 		<!-- jQuery Modal -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -19,10 +22,12 @@
 
 	<body onload="PageLoaded()" >
 
+		<!-- Header -->
 		<header>
 			<img src="images/pac-logo-3.png" width="500" height="150">
 		</header>
 
+		<!-- Menu -->
 		<menu>
 			<ul>
 				<li><a onClick="ShowSection('welcomeScreen')" href="#">Welcome</a></li>
@@ -47,7 +52,6 @@
 		
 		</div>
 		
-				
 		<!-- Sign Up Screen Div -->
 		<div id="signUp" class="fixed" style="display: none;">
 			<br><br>
@@ -56,12 +60,12 @@
 			<br><br>
 			<form id="regForm" method="post" action="">
 			  <div>
-				<label for="username">Username:</label>
-				<input type="text" id="usernameSignUp" name="username" placeholder="charecters only"></input>
+				<label for="usernameSignUp">Username:</label>
+				<input type="text" id="usernameSignUp" name="usernameSignUp" placeholder="charecters only"></input>
 			  </div><br>
 			  <div>
-				<label for="password">Password:</label>
-				<input type="password" id="passwordSignUp" name="password" placeholder="char and digits- at least 6"></input>
+				<label for="passwordSignUp">Password:</label>
+				<input type="passwordSignUp" id="passwordSignUp" name="passwordSignUp" placeholder="char and digits- at least 6"></input>
 			  </div><br>
 			  <div>
 				<label for="fullname">Full Name:</label>
@@ -215,17 +219,68 @@
 			Enter your user login details below
 			<br><br>
 			<div>
-				<label for="username" >UserName:</label>
-				<input type="text" id="userame" name="username" placeholder="Enter username"></input>
+				<label for="username" >Username:</label>
+				<input type="text" id="username" name="username" placeholder="Enter username"></input>
 			</div><br>
 			<div>
 				<label for="password">Password:&nbsp&nbsp</label>
 				<input type="password" id="password" name="password" placeholder="Enter password"></input>
 			</div><br>
-			<button onclick="checkDetails()" >Login</button>&nbsp&nbsp
-			<button onclick="document.getElementById('Password').value = '';document.getElementById('userName').value = ''">Clear</button>
+			<!-- <button onclick="loginSub()">Login</button>&nbsp&nbsp -->
+			<button onclick="loginSub()">Login</button>&nbsp&nbsp&nbsp
+			<button onclick="document.getElementById('password').value = '';document.getElementById('username').value = ''">Clear</button>
 
 			<br><br><br>
+		</div>
+
+		<!-- setup Screen Div -->
+		<div id="setup" class="fixed" style="display: none;">
+			<h1>Setup:</h1>
+			<div>
+			<label for="keys">Set direction keys:</label><br>
+			<input type="button" class="keys" id="UpSetup" onclick="upUpdate()" value="Up">
+			<br>
+			<input type="button" class="keys" id="LeftSetup" onclick="leftUpdate()" value="Left">
+			<input type="button" class="keys" id="DownSetup" onclick="downUpdate()" value="Down">
+			<input type="button" class="keys" id="RightSetup" onclick="rightUpdate()" value="Right"/>
+			<br><br><br>
+			</div>
+			
+			<form id="Setups" method="post" action="">
+			  
+				<div>
+					<label for="ballsNum">Number of balls:</label> &nbsp
+					<input type="number" min="50" max="90" value="50" class="slider" id="ballsNum" name="ballsNum" placeholder="minimum 50  max 90 balls"></input>&nbsp
+				</div><br>
+			  
+			  	<div>
+					<label for="timeNum">Time to play: (seconds)&nbsp&nbsp</label>
+					<input type="number" min="60" max="9999" value="60" class="slider" id="timeNum" name="timeNum" placeholder="minimum 60 seconds"></input>&nbsp				
+				</div><br>
+			  	
+				<div>
+					<label for="monsterNum">Amount of ghosts:</label>&nbsp
+					<input type="number" min="1" max="4" value="3" class="slider" id="monsterNum" name="monsterNum" placeholder="minimum 1 max 4 ghosts"></input>&nbsp
+				</div><br>
+				
+				<!-- colors -->
+				<div>
+				  <label for="5p">5 pts balls color:&nbsp&nbsp&nbsp</label> 
+				  <input id="5p" type="color" name="5p" value="#d19f41">
+				  <br>
+				  <label for="15p">15 pts balls color:&nbsp</label>
+				  <input id="15p" type="color" name="15p" value="#3ac96a">
+				  <br>
+				  <label for="25p">25 pts balls color:&nbsp</label>
+				  <input id="25p" type="color" name="25p" value="#5b5364" >
+				</div><br>
+
+			</form>
+			
+			<div>	
+				<button id="randomSetups" onclick="randomSetups()">Random setup</button>	&nbsp	
+				<button onclick="startGameSetup()">Start game</button>
+			</div>
 		</div>
 
 		<!-- Game Screen Div -->
@@ -253,32 +308,31 @@
 		</audio> -->
 
 		<!-- Modal -->
-		
-		<!-- <div class="modal fade" id="myModal" role="dialog" > -->
-			<!-- <div class="modal-dialog" > -->
-			<div class="modal fade" id="myModal" role="dialog" >
-			  <!-- Modal content-->
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <button type="button" class="close" data-dismiss="modal">&times;</button>
-				  <h4 class="modal-title">About:</h4>
-				</div>
-				<div class="modal-body">
-				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
-				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
-				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
-				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
-				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
-				</div>
-				<!-- <div class="modal-footer">
-				  <button type="button" class="btn7" data-dismiss="modal">Close</button>
-				</div> -->
-			  </div>
-			  
+		<div class="modal fade" id="myModal" role="dialog" >
+			<!-- Modal content-->
+			<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">About:</h4>
 			</div>
-		  <!-- </div> -->
+			<div class="modal-body">
+				<p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+				<p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+				<p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+				<p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+				<p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+			</div>
+			<!-- <div class="modal-footer">
+				<button type="button" class="btn7" data-dismiss="modal">Close</button>
+			</div> -->
+			</div>
+			
+		</div>
+
+		<!-- Footer -->
 		<footer><p> please contact us on: talavita@post.bgu.ac.il</p>
 			<img src="images/gohsts-logo.png" width="500" height="35">
 		</footer>
+
 	</body>
 </html>
