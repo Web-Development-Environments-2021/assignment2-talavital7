@@ -49,33 +49,33 @@ function Start() {
 	start_time = new Date();
 	for(var g=0;g<num_of_ghosts;g++){
 		if(g==0){
-			ghost1.i=0 * 60 + 30;
-			ghost1.j=0 * 60 + 30;
+			ghost1.i=0;
+			ghost1.j=0;
 			ghost1.id=10;
 			all_ghosts.push(ghost1);
 			ghost1.color="green";
 
 
 		}else if(g==1){
-			ghost2.i=9 * 60 + 30;
-			ghost2.j=0 * 60 + 30;
+			ghost2.i=9;
+			ghost2.j=0;
 			ghost2.id=11;
 			all_ghosts.push(ghost2);
 			ghost2.color="pink";
 
 		}else if(g==2){
-			ghost3.i=9 * 60 + 30;
-			ghost3.j=9 * 60 + 30;
+			ghost3.i=9;
+			ghost3.j=9;
 			ghost3.id=12;
 			all_ghosts.push(ghost3);
-			ghost1.color="red";
+			ghost3.color="red";
 
 		}else if(g==3){
-			ghost4.i=0 * 60 + 30;
-			ghost4.j=9 * 60 + 30;
+			ghost4.i=0;
+			ghost4.j=9;
 			ghost1.id=13;
 			all_ghosts.push(ghost4);
-			ghost1.color="#07f3df";
+			ghost4.color="#07f3df";
 
 		}
 	}
@@ -259,18 +259,7 @@ function Draw() {
 				context.fillStyle = "red"; //color
 				context.fill();
 			}
-			// else if (board[i][j] == 66){
-			// 	DrawGhost(context,"green",center)
-			// }
-			// else if (board[i][j] == 77){
-			// 	DrawGhost(context,"pink",center)
-			// }
-			// else if (board[i][j] == 88){
-			// 	DrawGhost(context,"red",center)
-			// }
-			// else if (board[i][j] == 99){
-			// 	DrawGhost(context,"#07f3df",center)
-			// }
+			
 		}
 	}
 	Draw_ghosts();
@@ -353,37 +342,40 @@ function DraePac(center){
 
 function DrawGhost(g) {
 	//ghost body
+	cen=new Object();
+	cen.i=g.i* 60 + 30;
+	cen.j=g.j* 60 + 30;
 	context.beginPath();
 	context.fillStyle = g.color; //color
-	context.arc(g.i, g.j, 20, Math.PI, 0, false);
-	context.moveTo(g.i-20, g.j);
-	context.lineTo(g.i-20, g.j+20);
-	context.lineTo(g.i-20+20/3, g.j+20-20/4);
-	context.lineTo(g.i-20+20/3*2, g.j+20);
-	context.lineTo(g.i, g.j+20-20/4);
-	context.lineTo(g.i+20/3, g.j+20);
-	context.lineTo(g.i+20/3*2, g.j+20-20/4);
-	context.lineTo(g.i+20, g.j+20);
-	context.lineTo(g.i+20, g.j);
+	context.arc(cen.i, cen.j, 20, Math.PI, 0, false);
+	context.moveTo(cen.i-20, cen.j);
+	context.lineTo(cen.i-20, cen.j+20);
+	context.lineTo(cen.i-20+20/3, cen.j+20-20/4);
+	context.lineTo(cen.i-20+20/3*2, cen.j+20);
+	context.lineTo(cen.i, cen.j+20-20/4);
+	context.lineTo(cen.i+20/3, cen.j+20);
+	context.lineTo(cen.i+20/3*2, cen.j+20-20/4);
+	context.lineTo(cen.i+20, cen.j+20);
+	context.lineTo(cen.i+20, cen.j);
 	context.fill();
 	// EYES
 	context.fillStyle = "white"; //left eye
 	context.beginPath();
-	context.arc(g.i-20/2.5, g.j-20/5, 20/3, 0, Math.PI*2, true); // white
+	context.arc(cen.i-20/2.5, cen.j-20/5, 20/3, 0, Math.PI*2, true); // white
 	context.fill();
 
 	context.fillStyle = "white"; //right eye
 	context.beginPath();
-	context.arc(g.i+20/2.5, g.j-20/5, 20/3, 0, Math.PI*2, true); // white
+	context.arc(cen.i+20/2.5, cen.j-20/5, 20/3, 0, Math.PI*2, true); // white
 	context.fill();
 	context.fillStyle="black"; //left eyeball
 	context.beginPath();
-	context.arc(g.i-20/3, g.j-20/5+20/6, 20/6, 0, Math.PI*2, true); //black
+	context.arc(cen.i-20/3, cen.j-20/5+20/6, 20/6, 0, Math.PI*2, true); //black
 	context.fill();
 
 	context.fillStyle="black"; //right eyeball
 	context.beginPath();
-	context.arc(g.i+20/3, g.j-20/5+20/6, 20/6, 0, Math.PI*2, true); //black
+	context.arc(cen.i+20/3, cen.j-20/5+20/6, 20/6, 0, Math.PI*2, true); //black
 	context.fill();
 
 
