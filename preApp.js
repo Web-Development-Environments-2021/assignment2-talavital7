@@ -1,14 +1,18 @@
 var validForm;
 saveKUser();
+
+//save the initial k,k username,password as required.
 function saveKUser() 
 {
     var username="k";
     var password="k";
     sessionStorage.setItem(username,password);
 } 
+
+//when page is freshly loaded
 function PageLoaded()
 {
-    ShowSection('gameScreen');
+    ShowSection('welcomeScreen');
 }
 
 //choose section to show.
@@ -126,10 +130,20 @@ function clearFields(){
     $(".error").remove();
 
 }
+
+//save a user
 function saveUser() 
 {
     var username=document.getElementById("usernameSignUp");
     var password=document.getElementById("passwordSignUp");
     sessionStorage.setItem(username.value,password.value);
     
-}   
+}
+
+//Login button has been clicked in login page.
+function login(){
+    validForm=true;
+    var username = $('#username').val();
+    var password = $('#password').val();
+    $(".error").remove();
+}
