@@ -17,7 +17,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	</head>
 
-	<body onload="PageLoaded()">
+	<body onload="PageLoaded()" >
 
 		<header>
 			<img src="images/pac-logo-3.png" width="500" height="150">
@@ -25,15 +25,15 @@
 
 		<menu>
 			<ul>
-				<li><a onClick="" href="#Welcome">Welcome</a></li>
-				<li><a onClick="" href="#Registration">Registration</a></li>
-				<li><a onClick="" href="#Login">Login</a></li>
+				<li><a onClick="ShowSection('welcomeScreen')" href="#">Welcome</a></li>
+				<li><a onClick="ShowSection('signUp')" href="#">Sign Up</a></li>
+				<li><a onClick="ShowSection('login')" href="#">Login</a></li>
 				<li><a  data-toggle="modal" data-target="#myModal" >About</a></li>
 			</ul>
 		</menu>
 
 		<!-- WelCome Screen Div -->
-		<div id="welcomeScreen" class="fixed">
+		<div id="welcomeScreen" class="fixed" style="display: none;">
 			<br><br><br>
 			<img src="images/pac-logo-2.png" width="110" height="120"><h1>Welcome!</h1>
 			<br><br>
@@ -203,8 +203,13 @@
 			  </div><br>			  
 			</form>
 			<div>
+<<<<<<< HEAD
 				<input id="submit" onclick="Submition()" type="submit" value="SignUp!" class="submit"/>&nbsp
 				<button onclick="clearFields()">Clear</button>
+=======
+				<input id="submit" onclick="subClick()" type="submit" value="SignUp!" class="submit"/>&nbsp
+				<button onclick="clearReg()">Clear</button>
+>>>>>>> 58ff08d0a2394f70858da0de47d07e5c2743a9dd
 			</div>
 		</div>
 
@@ -222,36 +227,41 @@
 				<label for="password">Password:&nbsp&nbsp</label>
 				<input type="password" id="password" name="password" placeholder="Enter password"></input>
 			</div><br>
-			<!-- <button onclick="checkDetails()" >Login</button>&nbsp&nbsp
-			<button onclick="document.getElementById('Password').value = '';document.getElementById('userName').value = ''">Clear</button> -->
+			<button onclick="checkDetails()" >Login</button>&nbsp&nbsp
+			<button onclick="document.getElementById('Password').value = '';document.getElementById('userName').value = ''">Clear</button>
 
 			<br><br><br>
 		</div>
 
 		<!-- Game Screen Div -->
-		<div id="gameScreen" class="fixed" style="display: none;">
-			<div id="score">
-				<label for="lblScore">SCORE:</label>
-				<input id="lblScore" type="text" />
+		<div id="gameScreen" class="fixed" >
+			<div class="left_s">
+				<div id="score">
+					<label for="lblScore">SCORE:</label>
+					<input id="lblScore" type="text" />
+				</div>
+				<div id="time">
+					<label for="lblTime">TIME:</label>
+					<input id="lblTime" type="text" />
+				</div>
 			</div>
-			<div id="time">
-				<label for="lblTime">TIME:</label>
-				<input id="lblTime" type="text" />
-			</div>
-			<div id="game">
+			<div id="game" class="center_s">
 				<canvas id="canvas" height="600" width="600"></canvas>
 			</div>
+			<div class="right_s">game setup</div>
 		</div>
 
 		<!-- Audio Element -->
-		<audio id="gameAudio">
+		<!-- <audio id="gameAudio">
 			<source src="SuperMarioBros.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
-		</audio>
+		</audio> -->
 
 		<!-- Modal -->
-		<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog">
+		
+		<!-- <div class="modal fade" id="myModal" role="dialog" > -->
+			<!-- <div class="modal-dialog" > -->
+			<div class="modal fade" id="myModal" role="dialog" >
 			  <!-- Modal content-->
 			  <div class="modal-content">
 				<div class="modal-header">
@@ -260,14 +270,20 @@
 				</div>
 				<div class="modal-body">
 				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+				  <p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
 				</div>
-				<div class="modal-footer">
-				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
+				<!-- <div class="modal-footer">
+				  <button type="button" class="btn7" data-dismiss="modal">Close</button>
+				</div> -->
 			  </div>
 			  
 			</div>
-		  </div>
-
+		  <!-- </div> -->
+		<footer><p> please contact us on: talavita@post.bgu.ac.il</p>
+			<img src="images/gohsts-logo.png" width="500" height="35">
+		</footer>
 	</body>
 </html>
