@@ -25,7 +25,7 @@
 		<!-- Header -->
 		<header>
 			<img src="images/pac-logo-3.png" width="500" height="150">
-			<h1 style="color:rgb(240, 169, 16);">By tal avital & naor aspir</h1>
+			<h2 >By tal avital & naor aspir</h1>
 		</header>
 
 		<!-- Menu -->
@@ -43,14 +43,17 @@
 			<br><br><br>
 			<!-- <img src="images/pac-logo-2.png" width="110" height="120"> -->
 			<h1>Welcome!</h1>
-			<br><br>
-			New Player?? Sign Up! :
 			<br>
+			<p>New Player?? Sign Up! :</p>
+			<br>
+			
 			<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="ShowSection('signUp')" class="btn btn-sm animated-button thar-one">Sign up</a> </div>
 
 			<!-- <button class="welcome" id="reg" onclick="ShowSection('signUp')">SignUp</button> -->
-			<br><br>Already A User?? Login! :
+			<br><br>
+			<p>Already A User?? Login! :</p>
 			<br>
+			
 			<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="ShowSection('login')" class="btn btn-sm animated-button thar-two">Login</a> </div>
 			<!-- <button class="welcome" id="loginButton" onclick="ShowSection('login')">LogIn</button> -->
 			<br><br>
@@ -293,8 +296,12 @@
 			</form>
 			
 			<div>	
-				<button id="randomGameSetup" onclick="randomGameSetup()">Random setup</button>	&nbsp	
-				<button onclick="startGameSetup()">Start game</button>
+				<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="randomGameSetup()" class="btn btn-sm animated-button thar-one">Random setup</a> </div>
+				<br>
+				<!-- <button id="randomGameSetup" onclick="randomGameSetup()">Random setup</button>	&nbsp	 -->
+				<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="startGameSetup()" class="btn btn-sm animated-button thar-one">Start game</a> </div>
+
+				<!-- <button onclick="startGameSetup()">Start game</button> -->
 			</div>
 		</div>
 		<img id="wall" src="images/StoneWall.png" style="display: none;">

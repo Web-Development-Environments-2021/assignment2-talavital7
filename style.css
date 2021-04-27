@@ -16,7 +16,25 @@ canvas{
 label.error {
     display: inline;
 }
-
+h1 {
+  font-family: Georgia, sans-serif;
+  font-size: 5em;
+  letter-spacing: -2px;
+  color: #F7CA18;
+}
+h2 {
+  font-family:'Lobster', cursive;
+  /* font-family: Georgia, sans-serif; */
+  /* font-size: 5em; */
+  letter-spacing: -2px;
+  color: #F7CA18;
+}
+h3 {
+  font-family: Georgia, sans-serif;
+  /* font-size: 5em; */
+  letter-spacing: -2px;
+  color: #F7CA18;
+}
 .fixed {
     /* position: absolute; */
     text-align: center;
@@ -67,6 +85,7 @@ ul {
   li a {
     display: block;
     color: white;
+    color: #F7CA18;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -75,6 +94,8 @@ ul {
   /* Change the link color to #111 (black) on hover */
   li a:hover {
     background-color: #111;
+    color: white;
+
   }
 
 /* The Modal (background) */
