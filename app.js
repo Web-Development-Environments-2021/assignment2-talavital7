@@ -16,7 +16,7 @@ var ghost3 =new Object();
 var ghost4 =new Object();
 var num_of_ghosts=4;
 var all_ghosts=[];
-var special_food=new Object();
+var special_food;
 var special_clock; 
 var food_color_5p="white";
 var food_color_15p="green";
@@ -222,11 +222,19 @@ function startSpecial(){
 	// var emptyCellSpecial=findRandomEmptyCell(board);
 	// special_food.i=emptyCellSpecial[0];
 	// special_food.j=emptyCellSpecial[1];
+	special_food=new Object();
 	special_food.i=3;
 	special_food.j=3;
 	special_food.eaten=0;
 }
-
+function endGhosts(){
+	ghost1 =new Object();
+	ghost2 =new Object();
+	ghost3 =new Object();
+	ghost4 =new Object();
+	all_ghosts=[];
+	// special_food=new Object();
+}
 function startGhosts(){
 	for(var g=0;g<num_of_ghosts;g++){
 		if(g==0){
@@ -610,6 +618,7 @@ function gameOver(){
 	pauseAudio();
 	window.clearInterval(interval);
 	window.clearInterval(intervalGH);
+	endGhosts();
 	window.alert("Loser!");
 }
 
@@ -722,17 +731,21 @@ function UpdatePosition() {
 			pauseAudio();
 			window.clearInterval(interval);
 			window.clearInterval(intervalGH);
+			endGhosts();
 			window.alert("Winner");
 		}else{
 			pauseAudio();
 			window.clearInterval(interval);
 			window.clearInterval(intervalGH);
+			endGhosts();
 			window.alert("You are better then "+score+" points!");
 		}
 	}
 	if (game_food==0) {
 		window.clearInterval(interval);
 		window.clearInterval(intervalGH);
+		pauseAudio();
+		endGhosts();
 		window.alert("Game completed");
 	} else {
 		Draw();

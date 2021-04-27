@@ -4,7 +4,10 @@ body {
     /* font-family: 'Press Start 2P', cursive; */
     margin: 0px;
 }
-
+canvas{
+  border-radius:5px;
+  border:white solid;
+}
 .error {
     color: red;
     margin-left: 5px;
