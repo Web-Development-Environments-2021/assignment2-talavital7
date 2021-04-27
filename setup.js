@@ -71,5 +71,6 @@ function startGameSetup(){
         food_remain=parseInt($('#ballsNum').val());
         num_of_ghosts=parseInt($('#monsterNum').val());
         ShowSection('gameScreen');
+        Start();
     }
 }

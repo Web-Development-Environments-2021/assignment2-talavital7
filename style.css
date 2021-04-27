@@ -148,17 +148,17 @@ footer {
 .left_s {
   float:left; 
   background:Red;
-  width:25%;
+  width:20%;
   
 }
 .center_s{
   float:left; 
-  width:50%;
+  width:60%;
 }
 .right_s{
   float:right;
   background:blue;
-  width:25%;
+  width:20%;
 }
 
 span{
