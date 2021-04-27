@@ -236,13 +236,13 @@
 		<!-- setup Screen Div -->
 		<div id="setup" class="fixed" style="display: none;">
 			<h1>Setup:</h1>
-			<div>
+			<div id='keysDiv'>
 			<label for="keys">Set direction keys:</label><br>
-			<input type="button" class="keys" id="UpSetup" onclick="upUpdate()" value="Up">
+			<input type="button" class="keys" id="UpSetup" onclick="upUpdate()" value="ArrowUp">
 			<br>
-			<input type="button" class="keys" id="LeftSetup" onclick="leftUpdate()" value="Left">
-			<input type="button" class="keys" id="DownSetup" onclick="downUpdate()" value="Down">
-			<input type="button" class="keys" id="RightSetup" onclick="rightUpdate()" value="Right"/>
+			<input type="button" class="keys" id="LeftSetup" onclick="leftUpdate()" value="ArrowLeft">
+			<input type="button" class="keys" id="DownSetup" onclick="downUpdate()" value="ArrowDown">
+			<input type="button" class="keys" id="RightSetup" onclick="rightUpdate()" value="ArrowRight"/>
 			<br><br><br>
 			</div>
 			
@@ -250,35 +250,35 @@
 			  
 				<div>
 					<label for="ballsNum">Number of balls:</label> &nbsp
-					<input type="number" min="50" max="90" value="50" class="slider" id="ballsNum" name="ballsNum" placeholder="minimum 50  max 90 balls"></input>&nbsp
+					<input type="number" min="50" max="90" value="50" class="number" id="ballsNum" name="ballsNum" placeholder="minimum 50  max 90 balls"></input>&nbsp
 				</div><br>
 			  
 			  	<div>
 					<label for="timeNum">Time to play: (seconds)&nbsp&nbsp</label>
-					<input type="number" min="60" max="9999" value="60" class="slider" id="timeNum" name="timeNum" placeholder="minimum 60 seconds"></input>&nbsp				
+					<input type="number" min="60" max="9999" value="60" class="number" id="timeNum" name="timeNum" placeholder="minimum 60 seconds"></input>&nbsp				
 				</div><br>
 			  	
 				<div>
 					<label for="monsterNum">Amount of ghosts:</label>&nbsp
-					<input type="number" min="1" max="4" value="3" class="slider" id="monsterNum" name="monsterNum" placeholder="minimum 1 max 4 ghosts"></input>&nbsp
+					<input type="number" min="1" max="4" value="3" class="number" id="monsterNum" name="monsterNum" placeholder="minimum 1 max 4 ghosts"></input>&nbsp
 				</div><br>
 				
 				<!-- colors -->
 				<div>
 				  <label for="5p">5 pts balls color:&nbsp&nbsp&nbsp</label> 
-				  <input id="5p" type="color" name="5p" value="#d19f41">
+				  <input id="5p" type="color" name="5p" value="#d29f41">
 				  <br>
 				  <label for="15p">15 pts balls color:&nbsp</label>
-				  <input id="15p" type="color" name="15p" value="#3ac96a">
+				  <input id="15p" type="color" name="15p" value="#4ac96a">
 				  <br>
 				  <label for="25p">25 pts balls color:&nbsp</label>
-				  <input id="25p" type="color" name="25p" value="#5b5364" >
+				  <input id="25p" type="color" name="25p" value="#5b6364" >
 				</div><br>
 
 			</form>
 			
 			<div>	
-				<button id="randomSetups" onclick="randomSetups()">Random setup</button>	&nbsp	
+				<button id="randomGameSetup" onclick="randomGameSetup()">Random setup</button>	&nbsp	
 				<button onclick="startGameSetup()">Start game</button>
 			</div>
 		</div>

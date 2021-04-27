@@ -13,6 +13,7 @@ function saveKUser()
 function PageLoaded()
 {
     sessionStorage.clear()
+    keysDivClone=$("#keysDiv").clone();
     ShowSection('welcomeScreen');
 }
 

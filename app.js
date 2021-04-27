@@ -38,7 +38,6 @@ var x;
 $(document).ready(function() {
 	x = document.getElementById("myAudio");
 	context = canvas.getContext("2d");
-	// Start();
 });
 
 
