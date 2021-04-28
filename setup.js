@@ -123,7 +123,7 @@ function handleSetupSide(){
     document.getElementById("ballsNumSide").setAttribute("readonly", true);
 
     $("#timeNumSide").val($("#timeNum").val());
-    document.getElementById("ballsNumSide").setAttribute("readonly", true);
+    document.getElementById("timeNumSide").setAttribute("readonly", true);
 
     $("#monsterNumSide").val($("#monsterNum").val());
     document.getElementById("monsterNumSide").setAttribute("readonly", true);
@@ -140,9 +140,9 @@ function randomGameSetup(){
     //random keys
     $("#keysDiv").replaceWith(keysDivClone.clone());
     //random colors.
-    var randColor1='#'+Math.floor(Math.random()*16777215).toString(16);
-    var randColor2='#'+Math.floor(Math.random()*16777215).toString(16);
-    var randColor3='#'+Math.floor(Math.random()*16777215).toString(16);
+    var randColor1=random_rgba()//'#'+Math.floor(Math.random()*16777215).toString(16);
+    var randColor2=random_rgba();//'#'+Math.floor(Math.random()*16777215).toString(16);
+    var randColor3=random_rgba();//'#'+Math.floor(Math.random()*16777215).toString(16);
     document.getElementById('5p').value=randColor1;
     document.getElementById('15p').value=randColor2;
     document.getElementById('25p').value=randColor3;
@@ -155,6 +155,23 @@ function randomGameSetup(){
     //random ghosts.
     var randGhosts = randomInteger(1,4);
     document.getElementById('monsterNum').value=randGhosts;
+}
+
+function random_rgba() {
+    const r = randomInteger(0, 255);
+    const g = randomInteger(0, 255);
+    const b = randomInteger(0, 255);
+    const rgb = rgbToHex(r, g, b);
+    return rgb;
+}
+
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+  
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
 function randomInteger(min, max) {

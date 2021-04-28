@@ -3,6 +3,9 @@ body {
     color: rgb(255, 255, 255);
     /* font-family: 'Press Start 2P', cursive; */
     margin: 0px;
+    height: 20vh;
+    /* overflow: hidden;
+    margin: 0; */
 }
 canvas{
   border-radius:5px;
