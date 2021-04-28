@@ -610,6 +610,7 @@ function gameOver(){
 	pauseAudio();
 	window.clearInterval(interval);
 	window.clearInterval(intervalGH);
+	window.clearInterval(intervalSpecial);
 	endGhosts();
 	window.alert("Loser!");
 }
@@ -723,12 +724,14 @@ function UpdatePosition() {
 			pauseAudio();
 			window.clearInterval(interval);
 			window.clearInterval(intervalGH);
+			window.clearInterval(intervalSpecial);
 			endGhosts();
 			window.alert("Winner");
 		}else{
 			pauseAudio();
 			window.clearInterval(interval);
 			window.clearInterval(intervalGH);
+			window.clearInterval(intervalSpecial);
 			endGhosts();
 			window.alert("You are better then "+score+" points!");
 		}
@@ -736,12 +739,21 @@ function UpdatePosition() {
 	if (game_food==0) {
 		window.clearInterval(interval);
 		window.clearInterval(intervalGH);
+		window.clearInterval(intervalSpecial);
 		pauseAudio();
 		endGhosts();
 		window.alert("Game completed");
 	} else {
 		Draw();
 	}
+}
+
+function closeGameScreen(){
+	window.clearInterval(interval);
+	window.clearInterval(intervalGH);
+	window.clearInterval(intervalSpecial);
+	pauseAudio();
+	endGhosts();
 }
 
 function playAudio() {
