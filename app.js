@@ -41,6 +41,7 @@ $(document).ready(function() {
 });
 
 
+
 function Start() {
 	board = new Array();
 	score = 0;
@@ -232,6 +233,7 @@ function startGhosts(){
 		if(g==0){
 			ghost1.i=0;
 			ghost1.j=0;
+			ghost1.id=10;
 			all_ghosts.push(ghost1);
 			ghost1.color="green";
 
@@ -239,18 +241,21 @@ function startGhosts(){
 		}else if(g==1){
 			ghost2.i=(xboard-1);
 			ghost2.j=0;
+			ghost2.id=11;
 			all_ghosts.push(ghost2);
 			ghost2.color="pink";
 
 		}else if(g==2){
 			ghost3.i=(xboard-1);
 			ghost3.j=(yboard-1);
+			ghost3.id=12;
 			all_ghosts.push(ghost3);
 			ghost3.color="red";
 
 		}else if(g==3){
 			ghost4.i=0;
 			ghost4.j=(yboard-1);
+			ghost1.id=13;
 			all_ghosts.push(ghost4);
 			ghost4.color="#07f3df";
 
@@ -618,22 +623,35 @@ function resetGhosts(){
 		if(g==0){
 			ghost1.i=0;
 			ghost1.j=0;
+			// ghost1.id=10;
+			// all_ghosts.push(ghost1);
+			// ghost1.color="green";
+
+
 		}else if(g==1){
 			ghost2.i=(xboard-1);
 			ghost2.j=0;
+			// ghost2.id=11;
+			// all_ghosts.push(ghost2);
+			// ghost2.color="pink";
+
 		}else if(g==2){
 			ghost3.i=(xboard-1);
 			ghost3.j=(yboard-1);
+			// ghost3.id=12;
+			// all_ghosts.push(ghost3);
+			// ghost3.color="red";
+
 		}else if(g==3){
 			ghost4.i=0;
 			ghost4.j=(yboard-1);
+			// ghost1.id=13;
+			// all_ghosts.push(ghost4);
+			// ghost4.color="#07f3df";
+
 		}
 	}
 
-}
-
-function startNewGameSetup(){
-	ShowSection('setup');
 }
 
 function restartGame(){
@@ -701,7 +719,7 @@ function UpdatePosition() {
 	}
 	board[shape.i][shape.j] = 2;
 	var currentTime = new Date();
-	time_elapsed = (currentTime - start_time) / 1000;
+	time_elapsed = game_time - (Math.abs(currentTime - start_time) / 1000);
 	if(time_elapsed>=game_time){
 		if(score>=100){
 			pauseAudio();
@@ -748,4 +766,6 @@ function playAudio() {
 	x.pause();
   }
   
-
+function startNewGameSetup(){
+	ShowSection('setup');
+}

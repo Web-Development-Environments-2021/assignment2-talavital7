@@ -42,6 +42,8 @@ h3 {
     width: 100%;
     margin: 0;
     display: none;
+    font-family:'Lobster', cursive;
+    color: #F7CA18;
 
 }
 
@@ -78,10 +80,6 @@ ul {
     justify-content: space-evenly;
   }
   
-  li {
-    /* float: left; */
-  }
-  
   li a {
     display: block;
     color: white;
@@ -89,6 +87,7 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family:'Lobster', cursive;
   }
   
   /* Change the link color to #111 (black) on hover */
