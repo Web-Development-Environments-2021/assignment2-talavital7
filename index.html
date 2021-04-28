@@ -34,7 +34,7 @@
 				<li><a onClick="ShowSection('welcomeScreen')" href="#">Welcome</a></li>
 				<li><a onClick="ShowSection('signUp')" href="#">Sign Up</a></li>
 				<li><a onClick="ShowSection('login')" href="#">Login</a></li>
-				<li><a  data-toggle="modal" data-target="#myModal" >About</a></li>
+				<li><a  data-toggle="modal" onClick="" data-target="#myModal" >About</a></li>
 			</ul>
 		</div>
 
@@ -314,24 +314,26 @@
 		<audio loop id="myAudio">
 			<source src="audio/trance_djf.mp3" type="audio/mpeg">
 		</audio>
+
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" role="dialog" >
 			<!-- Modal content-->
 			<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">About:</h4>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h3 class="modal-title" style="text-align:center;">About our website:</h4>
+			<div class="modal-body" style="text-align:center;">
+				<h4>During the assingment we use jQuery for:</h4>
+				<p>this modal.</p>
+				<p>Regex featurs.</p>
+				<h4>During the assingment we strugled with:</h4>
+				<p>jQuery syntaxt: it was new to us.</p>
+				<p>working on different virsion (git).</p>
+				<p>styling all the game features.</p>
 			</div>
-			<div class="modal-body">
-				<p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
-				<p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
-				<p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
-				<p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
-				<p>WE NEED TO FILL THIS AREA!!!!!!!!!!!!!!!!!!!!!</p>
+			<div class="modal-footer">
+				<h3 style="text-align:center;">Created by Tal avital, Naor aspir</h3>
+				<!-- <button type="button" class="btn7" data-dismiss="modal">Close</button> -->
 			</div>
-			<!-- <div class="modal-footer">
-				<button type="button" class="btn7" data-dismiss="modal">Close</button>
-			</div> -->
 			</div>
 			
 		</div>
@@ -419,9 +421,11 @@
 					</div>
 			</div>
 		</div>
+		</div>
 
-		<footer><p> please contact us on: talavita@post.bgu.ac.il</p>
+		<footer>
 			<img src="images/gohsts-logo.png" width="500" height="35">
+			<p> please contact us on: talavita@post.bgu.ac.il</p>
 		</footer>
 
 	</body>
