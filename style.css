@@ -187,9 +187,10 @@ footer {
   width:60%;
 }
 .right_s{
-  float:right;
-  background:blue;
+  float:right; 
+  background:rgb(15, 15, 15);
   width:20%;
+  border-radius:5px;
 }
 
 span{
@@ -331,4 +332,10 @@ a.animated-button.thar-four:before {
 	color: #000 !important;
 	background: #F7CA18;
 	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.colorSide{
+  background-color: "white";
+  width: 50px; 
+  height: 20px;
 }

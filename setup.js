@@ -109,8 +109,31 @@ function startGameSetup(){
 }
 
 function handleSetupSide(){
-    $("#ballsNumSide").value= $("#ballsNum").value;
+    //keys
+    $("#UpSetupSide").val($("#UpSetup").val());
+    document.getElementById("UpSetupSide").setAttribute("readonly", true);
+    $("#DownSetupSide").val($("#DownSetup").val());
+    document.getElementById("DownSetupSide").setAttribute("readonly", true);
+    $("#LeftSetupSide").val($("#LeftSetup").val());
+    document.getElementById("LeftSetupSide").setAttribute("readonly", true);
+    $("#RightSetupSide").val($("#RightSetup").val());
+    document.getElementById("RightSetupSide").setAttribute("readonly", true);
+    //params
+    $("#ballsNumSide").val($("#ballsNum").val());
     document.getElementById("ballsNumSide").setAttribute("readonly", true);
+
+    $("#timeNumSide").val($("#timeNum").val());
+    document.getElementById("ballsNumSide").setAttribute("readonly", true);
+
+    $("#monsterNumSide").val($("#monsterNum").val());
+    document.getElementById("monsterNumSide").setAttribute("readonly", true);
+    //colors
+    document.getElementById("5pSide").style.backgroundColor=$("#5p").val();
+    document.getElementById("5pSide").setAttribute("readonly", true);
+    document.getElementById("15pSide").style.backgroundColor=$("#15p").val();
+    document.getElementById("15pSide").setAttribute("readonly", true);
+    document.getElementById("25pSide").style.backgroundColor=$("#25p").val();
+    document.getElementById("25pSide").setAttribute("readonly", true);
 }
 
 function randomGameSetup(){
