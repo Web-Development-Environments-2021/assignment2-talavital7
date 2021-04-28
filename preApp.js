@@ -21,6 +21,7 @@ function PageLoaded()
 //choose section to show.
 function ShowSection(id)
 {
+    
     //hide all Divs
     var section1 = document.getElementById('welcomeScreen');
     section1.style.display="none";
@@ -29,6 +30,9 @@ function ShowSection(id)
     var section3 = document.getElementById('login');
     section3.style.display="none";
     var section4 = document.getElementById('gameScreen');
+    if (section4.style.display != "none"){
+        closeGameScreen();
+    }
     section4.style.display="none";
     var section4 = document.getElementById('setup');
     section4.style.display="none";
@@ -151,6 +155,7 @@ function loginSub(){
     alert("Wrong credentials, please try again");
     }
     else{   
+    document.getElementById('usernameSide').innerHTML=username;
     ShowSection('setup');
     } 
 }
