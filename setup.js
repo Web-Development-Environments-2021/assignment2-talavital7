@@ -110,7 +110,7 @@ function startGameSetup(){
 
 function handleSetupSide(){
     $("#ballsNumSide").value= $("#ballsNum").value;
-    document.getElementById("#ballsNumSide").setAttribute("readonly", true);
+    document.getElementById("ballsNumSide").setAttribute("readonly", true);
 }
 
 function randomGameSetup(){

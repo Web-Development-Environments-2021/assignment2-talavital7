@@ -338,14 +338,17 @@
 		<!-- Game Screen Div -->
 		<div id="gameScreen" class="fixed" style="display: none;" >
 			<h1>Let's play!!!</h1>
-			
+			<div id="time">
+				<label for="lblTime">GAME TIME :</label>
+				<input id="lblTime" type="text" />
+			</div>
 			<div class="left_s">
 				<div id="helloP">
 					<h3>Hello, <span id="usernameSide"></span></h3>
 				</div>
 				<h3>Here your stat's:</h3>
 				<div id="score">
-					<label for="lblScore">SCORE:</label>
+					<label for="lblScore">YOUR SCORE:</label>
 					<input id="lblScore" type="text" />
 				</div>
 				<br>
@@ -355,15 +358,16 @@
 					<input id="lblTime" type="text" />
 				</div> -->
 				<div id="lives">
-					<label for="lblLives">LIVES:</label>
+					<label for="lblLives">LIVES LEFT:</label>
 					<input id="lblLives" type="text" />
 				</div>
 				<br>
 				<br>
-				<div id="time">
-					<label for="lblTime">TIME:</label>
-					<input id="lblTime" type="text" />
-				</div>
+				<h3>Want a fresh start?</h3>
+				<br>
+				<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="startNewGameSetup()" class="btn btn-sm animated-button thar-one">Start new game</a> </div>
+				<br>
+
 			</div>
 			<div id="game" class="center_s">
 				<canvas id="canvas" height="600" width="660"></canvas>

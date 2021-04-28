@@ -19,20 +19,20 @@ label.error {
 h1 {
   font-family: Georgia, sans-serif;
   font-size: 5em;
-  letter-spacing: -2px;
+  /* letter-spacing: -2px; */
   color: #F7CA18;
 }
 h2 {
   font-family:'Lobster', cursive;
   /* font-family: Georgia, sans-serif; */
   /* font-size: 5em; */
-  letter-spacing: -2px;
+  /* letter-spacing: -2px; */
   color: #F7CA18;
 }
 h3 {
   font-family: Georgia, sans-serif;
   /* font-size: 5em; */
-  letter-spacing: -2px;
+  /* letter-spacing: -2px; */
   color: #F7CA18;
 }
 .fixed {
