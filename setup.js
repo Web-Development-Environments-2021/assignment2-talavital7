@@ -102,9 +102,15 @@ function startGameSetup(){
         game_time=time;
         food_remain=balls;
         num_of_ghosts=ghostsNum;
+        handleSetupSide();
         ShowSection('gameScreen');
         Start();
     }
+}
+
+function handleSetupSide(){
+    $("#ballsNumSide").value= $("#ballsNum").value;
+    document.getElementById("#ballsNumSide").setAttribute("readonly", true);
 }
 
 function randomGameSetup(){
