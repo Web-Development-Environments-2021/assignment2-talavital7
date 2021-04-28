@@ -290,7 +290,7 @@
 		
 		<!-- Game Screen Div -->
 		<div id="gameScreen" class="fixed" >
-			<div class="left_s">
+			<div  id="left_s" class="left_s">
 				<div id="score">
 					<label for="lblScore">SCORE:</label>
 					<input id="lblScore" type="text" />
@@ -307,7 +307,51 @@
 			<div id="game" class="center_s">
 				<canvas id="canvas" height="600" width="660"></canvas>
 			</div>
-			<div class="right_s">game setup</div>
+			<div class="right_s">game setup
+				<div id="setup" class="fixed" style="display: none;">
+					<h1>Setup:</h1>
+					<div id='keysDiv'>
+					<label for="keys">Set direction keys:</label><br>
+					<input type="button" class="keys" id="UpSetup" value="ArrowUp">
+					<br>
+					<input type="button" class="keys" id="LeftSetup" value="ArrowLeft">
+					<input type="button" class="keys" id="DownSetup"  value="ArrowDown">
+					<input type="button" class="keys" id="RightSetup" value="ArrowRight"/>
+					<br><br><br>
+					</div>
+					
+					<form id="Setups" method="post" action="">
+					  
+						<div>
+							<label for="ballsNum">Number of balls:</label> &nbsp
+							<input type="number" min="50" max="90" value="50" class="number" id="ballsNum" name="ballsNum" placeholder="minimum 50  max 90 balls"></input>&nbsp
+						</div><br>
+					  
+						  <div>
+							<label for="timeNum">Time to play: (seconds)&nbsp&nbsp</label>
+							<input type="number" min="60" max="9999" value="60" class="number" id="timeNum" name="timeNum" placeholder="minimum 60 seconds"></input>&nbsp				
+						</div><br>
+						  
+						<div>
+							<label for="monsterNum">Amount of ghosts:</label>&nbsp
+							<input type="number" min="1" max="4" value="3" class="number" id="monsterNum" name="monsterNum" placeholder="minimum 1 max 4 ghosts"></input>&nbsp
+						</div><br>
+						
+						<!-- colors -->
+						<div>
+						  <label for="5p">5 pts balls color:&nbsp&nbsp&nbsp</label> 
+						  <input id="5p" type="color" name="5p" value="#d29f41">
+						  <br>
+						  <label for="15p">15 pts balls color:&nbsp</label>
+						  <input id="15p" type="color" name="15p" value="#4ac96a">
+						  <br>
+						  <label for="25p">25 pts balls color:&nbsp</label>
+						  <input id="25p" type="color" name="25p" value="#5b6364" >
+						</div><br>
+		
+					</form>
+				</div>
+			</div>
 		</div>
 		
 		<audio id="myAudio">

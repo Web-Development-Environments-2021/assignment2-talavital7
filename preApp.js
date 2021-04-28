@@ -1,5 +1,5 @@
 var validForm;
-saveKUser();
+
 
 //save the initial k,k username,password as required.
 function saveKUser() 
@@ -14,6 +14,7 @@ function PageLoaded()
 {
     sessionStorage.clear()
     keysDivClone=$("#keysDiv").clone();
+    saveKUser();
     ShowSection('welcomeScreen');
 }
 
@@ -35,8 +36,6 @@ function ShowSection(id)
     //show only one Div
     var selected = document.getElementById(id);
     selected.style.display="table";
-    // if(id != 'boardGame')
-    //     endGame();
     
     $(".error").remove();
 }
@@ -143,18 +142,15 @@ function saveUser(){
 
 //Login button has been clicked in login page.
 function loginSub(){
-    // var username = $('#username').val();
-    // var password = $('#password').val();
-    // $(".error").remove();
+    var username = $('#username').val();
+    var password = $('#password').val();
+    $(".error").remove();
 
-    // var passwordFromDB = sessionStorage.getItem(username.value);
-    // if(password.value != passwordFromDB.value){
-    // alert("Wrong credentials, please try again");
-    // }
-    // else{
-    // alert("check");    
-    // ShowSection('setup');
-    // } 
-
+    var passwordFromDB = sessionStorage.getItem(username);
+    if(password != passwordFromDB){
+    alert("Wrong credentials, please try again");
+    }
+    else{   
     ShowSection('setup');
+    } 
 }
