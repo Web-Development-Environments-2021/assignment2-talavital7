@@ -25,29 +25,37 @@
 		<!-- Header -->
 		<header>
 			<img src="images/pac-logo-3.png" width="500" height="150">
+			<h2 >By tal avital & naor aspir</h1>
 		</header>
 
 		<!-- Menu -->
-		<menu>
-			<ul>
+		<div id="menu">
+			<ul >
 				<li><a onClick="ShowSection('welcomeScreen')" href="#">Welcome</a></li>
 				<li><a onClick="ShowSection('signUp')" href="#">Sign Up</a></li>
 				<li><a onClick="ShowSection('login')" href="#">Login</a></li>
 				<li><a  data-toggle="modal" data-target="#myModal" >About</a></li>
 			</ul>
-		</menu>
+		</div>
 
 		<!-- WelCome Screen Div -->
 		<div id="welcomeScreen" class="fixed" style="display: none;">
 			<br><br><br>
-			<img src="images/pac-logo-2.png" width="110" height="120"><h1>Welcome!</h1>
+			<!-- <img src="images/pac-logo-2.png" width="110" height="120"> -->
+			<h1>Welcome!</h1>
+			<br>
+			<p>New Player?? Sign Up! :</p>
+			<br>
+			
+			<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="ShowSection('signUp')" class="btn btn-sm animated-button thar-one">Sign up</a> </div>
+
+			<!-- <button class="welcome" id="reg" onclick="ShowSection('signUp')">SignUp</button> -->
 			<br><br>
-			New Player?? Sign Up! :
+			<p>Already A User?? Login! :</p>
 			<br>
-			<button class="welcome" id="reg" onclick="ShowSection('signUp')">SignUp</button>
-			<br><br>Already A User?? Login! :
-			<br>
-			<button class="welcome" id="loginButton" onclick="ShowSection('login')">LogIn</button>
+			
+			<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="ShowSection('login')" class="btn btn-sm animated-button thar-two">Login</a> </div>
+			<!-- <button class="welcome" id="loginButton" onclick="ShowSection('login')">LogIn</button> -->
 			<br><br>
 		
 		</div>
@@ -207,8 +215,14 @@
 			  </div><br>			  
 			</form>
 			<div>
-				<input id="submit" onclick="Submition()" type="submit" value="SignUp!" class="submit"/>&nbsp
-				<button onclick="clearFields()">Clear</button>
+				<a id="submit" onclick="Submition()"  class="btn btn-sm animated-button thar-two">SignUp!</a>
+				<br>
+				<br>
+
+				<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="clearFields()" class="btn btn-sm animated-button thar-two">Clear</a> </div>
+
+				<!-- <button onclick="clearFields()">Clear</button> -->
+				
 			</div>
 		</div>
 
@@ -227,8 +241,12 @@
 				<input type="password" id="password" name="password" placeholder="Enter password"></input>
 			</div><br>
 			<!-- <button onclick="loginSub()">Login</button>&nbsp&nbsp -->
-			<button onclick="loginSub()">Login</button>&nbsp&nbsp&nbsp
-			<button onclick="document.getElementById('password').value = '';document.getElementById('username').value = ''">Clear</button>
+			<!-- <button onclick="loginSub()">Login</button>&nbsp&nbsp&nbsp -->
+			<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="loginSub()" class="btn btn-sm animated-button thar-one">Login</a> </div>
+			<br>
+			<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="document.getElementById('password').value = '';document.getElementById('username').value = ''" class="btn btn-sm animated-button thar-one">Clear</a> </div>
+
+			<!-- <button onclick="document.getElementById('password').value = '';document.getElementById('username').value = ''">Clear</button> -->
 
 			<br><br><br>
 		</div>
@@ -278,8 +296,12 @@
 			</form>
 			
 			<div>	
-				<button id="randomGameSetup" onclick="randomGameSetup()">Random setup</button>	&nbsp	
-				<button onclick="startGameSetup()">Start game</button>
+				<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="randomGameSetup()" class="btn btn-sm animated-button thar-one">Random setup</a> </div>
+				<br>
+				<!-- <button id="randomGameSetup" onclick="randomGameSetup()">Random setup</button>	&nbsp	 -->
+				<div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" onclick="startGameSetup()" class="btn btn-sm animated-button thar-one">Start game</a> </div>
+
+				<!-- <button onclick="startGameSetup()">Start game</button> -->
 			</div>
 		</div>
 		<img id="wall" src="images/StoneWall.png" style="display: none;">
@@ -287,74 +309,9 @@
 		<img id="heart" src="images/heart.png" style="display: none;">
 		<img id="clock" src="images/clock.png" style="display: none;">
 		<!-- Audio Element -->
+				
 		
-		<!-- Game Screen Div -->
-		<div id="gameScreen" class="fixed" >
-			<div  id="left_s" class="left_s">
-				<div id="score">
-					<label for="lblScore">SCORE:</label>
-					<input id="lblScore" type="text" />
-				</div>
-				<div id="time">
-					<label for="lblTime">TIME:</label>
-					<input id="lblTime" type="text" />
-				</div>
-				<div id="lives">
-					<label for="lblLives">LIVES:</label>
-					<input id="lblLives" type="text" />
-				</div>
-			</div>
-			<div id="game" class="center_s">
-				<canvas id="canvas" height="600" width="660"></canvas>
-			</div>
-			<div class="right_s">game setup
-				<div id="setup" class="fixed" style="display: none;">
-					<h1>Setup:</h1>
-					<div id='keysDiv'>
-					<label for="keys">Set direction keys:</label><br>
-					<input type="button" class="keys" id="UpSetup" value="ArrowUp">
-					<br>
-					<input type="button" class="keys" id="LeftSetup" value="ArrowLeft">
-					<input type="button" class="keys" id="DownSetup"  value="ArrowDown">
-					<input type="button" class="keys" id="RightSetup" value="ArrowRight"/>
-					<br><br><br>
-					</div>
-					
-					<form id="Setups" method="post" action="">
-					  
-						<div>
-							<label for="ballsNum">Number of balls:</label> &nbsp
-							<input type="number" min="50" max="90" value="50" class="number" id="ballsNum" name="ballsNum" placeholder="minimum 50  max 90 balls"></input>&nbsp
-						</div><br>
-					  
-						  <div>
-							<label for="timeNum">Time to play: (seconds)&nbsp&nbsp</label>
-							<input type="number" min="60" max="9999" value="60" class="number" id="timeNum" name="timeNum" placeholder="minimum 60 seconds"></input>&nbsp				
-						</div><br>
-						  
-						<div>
-							<label for="monsterNum">Amount of ghosts:</label>&nbsp
-							<input type="number" min="1" max="4" value="3" class="number" id="monsterNum" name="monsterNum" placeholder="minimum 1 max 4 ghosts"></input>&nbsp
-						</div><br>
-						
-						<!-- colors -->
-						<div>
-						  <label for="5p">5 pts balls color:&nbsp&nbsp&nbsp</label> 
-						  <input id="5p" type="color" name="5p" value="#d29f41">
-						  <br>
-						  <label for="15p">15 pts balls color:&nbsp</label>
-						  <input id="15p" type="color" name="15p" value="#4ac96a">
-						  <br>
-						  <label for="25p">25 pts balls color:&nbsp</label>
-						  <input id="25p" type="color" name="25p" value="#5b6364" >
-						</div><br>
-		
-					</form>
-				</div>
-			</div>
-		</div>
-		
-		<audio id="myAudio">
+		<audio loop id="myAudio">
 			<source src="audio/trance_djf.mp3" type="audio/mpeg">
 		</audio>
 		<!-- Modal -->
@@ -378,7 +335,46 @@
 			</div>
 			
 		</div>
+		<!-- Game Screen Div -->
+		<div id="gameScreen" class="fixed" >
+			<h1>Let's play!!!</h1>
+			
+			<div class="left_s">
+				<div id="helloP">
+					<h3>Hello, <span id="uname"></span></h3>
+				</div>
+				<h3>Here your stat's:</h3>
+				<div id="score">
+					<label for="lblScore">SCORE:</label>
+					<input id="lblScore" type="text" />
+				</div>
+				<br>
+				<br>
+				<!-- <div id="time">
+					<label for="lblTime">TIME:</label>
+					<input id="lblTime" type="text" />
+				</div> -->
+				<div id="lives">
+					<label for="lblLives">LIVES:</label>
+					<input id="lblLives" type="text" />
+				</div>
+				<br>
+				<br>
+				<div id="time">
+					<label for="lblTime">TIME:</label>
+					<input id="lblTime" type="text" />
+				</div>
+			</div>
+			<div id="game" class="center_s">
+				<canvas id="canvas" height="600" width="660"></canvas>
+			</div>
+			<div class="right_s">game setup</div>
+		</div>
 
+		<!-- <div id="footer">
+			<p> please contact us on: talavita@post.bgu.ac.il</p>
+			<img src="images/gohsts-logo.png" width="500" height="35">
+		</div> -->
 		<!-- Footer -->
 		<footer><p> please contact us on: talavita@post.bgu.ac.il</p>
 			<img src="images/gohsts-logo.png" width="500" height="35">
