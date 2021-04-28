@@ -57,6 +57,18 @@ function rightUpdate(){
     });
 }
 
+function escClose(){
+    escPressed=false;
+    addEventListener('keydown', function f(e) {
+        var keyval=e.keyCode;
+        if (e != undefined && !rightisPressed && keyval==27){
+            document.getElementById('myModal').style.display="none";
+            // $('#myModal').hide();
+            escPressed=true;
+        }
+    });
+}
+
 function startGameSetup(){
     var lunchGame=true;
     var balls = parseInt($('#ballsNum').val());
@@ -139,18 +151,18 @@ function handleSetupSide(){
 function randomGameSetup(){
     //random keys
     $("#keysDiv").replaceWith(keysDivClone.clone());
-    //random colors.
+    // random colors.
     var randColor1=random_rgba()//'#'+Math.floor(Math.random()*16777215).toString(16);
     var randColor2=random_rgba();//'#'+Math.floor(Math.random()*16777215).toString(16);
     var randColor3=random_rgba();//'#'+Math.floor(Math.random()*16777215).toString(16);
     document.getElementById('5p').value=randColor1;
     document.getElementById('15p').value=randColor2;
     document.getElementById('25p').value=randColor3;
-    //random time.
-    var randTime=randomInteger(60,500);
+    // random time.
+    var randTime=randomInteger(60,99);
     document.getElementById('timeNum').value=randTime;
     //random balls.
-    var randBalls = randomInteger(50,90);
+    var randBalls = randomInteger(50,75);
     document.getElementById('ballsNum').value=randBalls;
     //random ghosts.
     var randGhosts = randomInteger(1,4);

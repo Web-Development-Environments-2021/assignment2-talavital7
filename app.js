@@ -53,7 +53,7 @@ function Start() {
 	ghost_left=num_of_ghosts;
 	food_num_5p=Math.round(food_remain*0.6);
 	food_num_15p=Math.round(food_remain*0.3);
-	food_num_25p=food_remain-(food_num_5p+food_num_15p);
+	food_num_25p=Math.round(food_remain*0.1);//food_remain-(food_num_5p+food_num_15p);
 	start_time = new Date();
 	startGhosts();
 	
@@ -188,11 +188,11 @@ function Start() {
 }
 
 function findRandomEmptyCell(board) {
-	var i = Math.floor(Math.random() * (xboard-1) + 1);
-	var j = Math.floor(Math.random() * (yboard-1) + 1);
+	var i = Math.floor(Math.random() * (xboard) );
+	var j = Math.floor(Math.random() * (yboard) );
 	while (board[i][j] != 0) {
-		i = Math.floor(Math.random() * (xboard-1) + 1);
-		j = Math.floor(Math.random() * (yboard-1) + 1);
+		i = Math.floor(Math.random() * (xboard) );
+		j = Math.floor(Math.random() * (yboard) );
 	}
 	return [i, j];
 }
