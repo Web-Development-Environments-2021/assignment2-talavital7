@@ -266,7 +266,7 @@ function startGhosts(){
 function Draw() {
 	canvas.width = canvas.width; //clean board
 	lblScore.value = score;
-	lblTime.value = time_elapsed;
+	lblTime.value = time_elapsed.toFixed(2);
 	lblLives.value = pac_lives;
 	for (var i = 0; i < xboard; i++) {
 		for (var j = 0; j < yboard; j++) {
